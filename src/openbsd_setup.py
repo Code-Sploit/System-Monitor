@@ -18,8 +18,8 @@ netstat = netstat.upper()
 
 if (glances == "TRUE"):
     print("Enabeling glances support...")
-    os.system("pkg_add -D snap py-pip")
-    os.system("pip2.7 install glances")
+    os.system("pkg_add -D snap py3-pip")
+    os.system("pip3.7 install glances")
     with open("./generated","a") as f:
         f.write("tmux new-session -s control -d glances")
 if (vtop == "TRUE"):
@@ -53,7 +53,6 @@ with open("./generated","a") as f:
     f.write("tmux resize-pane -L 21")
     f.write("\n\n")
     f.write("tmux attach -t control")
-
 
 os.system("mv ./i3-show-netstat /usr/bin/")
 os.system("mv ./generated /usr/bin/control_sys")
