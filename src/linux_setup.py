@@ -18,8 +18,8 @@ netstat = netstat.upper()
 
 if (glances == "TRUE"):
     print("Enabeling glances support...")
-    os.system("apt-get install python-pip -y")
-    os.system("pip2.7 install glances")
+    os.system("apt-get install python3-pip -y")
+    os.system("pip3.7 install glances")
     with open("./generated","a") as f:
         f.write("tmux new-session -s control -d glances")
 if (vtop == "TRUE"):
